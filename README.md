@@ -29,11 +29,42 @@ you intend to add another copy of the motor.
 python .\create_motor.py --template "C:\path\to\coupled_template.tn"
 ```
 
+To export CSV maps from an already-generated sample without solving it again:
+
+```powershell
+python .\create_motor.py --export-sample ".\motor_samples\sample_0005"
+```
+
+To render heatmaps for every result CSV in a sample folder (searched
+recursively):
+
+```powershell
+python .\generate_heatmap.py ".\motor_samples\sample_0005"
+```
+
+Pass `.\motor_samples` to process all nested sample folders. This writes one
+SVG beside each recognized result CSV. The default map is an XY projection
+that averages the field values into a 2D grid across the model's axial depth.
+Use `--time 5` to plot a specific transient time in seconds (static maps remain
+static), or `--bins 400` to increase grid resolution. For a single CSV,
+`--output "C:\plots\heatmap.svg"` can select the output path. SVG files open in
+a web browser and do not require extra Python plotting packages.
+
+When `create_motor.py` finishes exporting the sample's solution CSVs, it
+automatically runs the recursive heatmap generator on that sample before
+finalizing its numbered output folder.
+
+The heat-source CSV for `sample_0006` currently contains only zero values, so
+its heatmap explicitly indicates that there is no heat source in that result.
+Add electromagnetic excitation or thermal heat sources to the model to produce
+a non-uniform heat-loss map.
+
 Optional arguments:
 
 | Argument | Default | Description |
 |---|---:|---|
-| `--template` | Required | Path to a clean coupled MAGNET Thermal `.mn` or `.tn` template |
+| `--template` | Required unless exporting | Path to a clean coupled MAGNET Thermal `.mn` or `.tn` template |
+| `--export-sample` | — | Export CSV maps from an existing numbered sample folder instead of generating a new sample |
 | `--output-root` | `.\motor_samples` | Folder for numbered sample directories |
 | `--time-steps` | `10` | Numeric model parameter assigned to `TimeSteps` |
 | `--duration-seconds` | `10` | Transient stop time |
@@ -78,12 +109,28 @@ sample_0001\
   coupled_transient_2d.mn
   coupled_static_3d.mn
   coupled_transient_3d.mn
+  coupled_static_2d_temperature.csv
+  coupled_static_2d_heat_source_density.csv
+  ...
 ```
 
 Solution files are written only when ThermNet reports the corresponding solver
 is valid and the solve completes successfully; invalid solution types are
 skipped. A solution file is a ThermNet model copy containing that solution,
 not an exported report or image.
+
+For every successful solution, the script also exports spatial CSV maps:
+
+- `coupled_<solution>_temperature.csv` contains time, XYZ coordinates in
+  meters, and temperature in the model's temperature unit.
+- `coupled_<solution>_heat_source_density.csv` contains time, field quantity,
+  XYZ coordinates in meters, and total heat-source density in W/m³.
+
+Transient CSVs contain rows for every saved solution time. Static CSVs leave
+`time_s` blank. Element-based heat-source values are located at the centroid
+of their mesh element; fields stored at mesh points retain their point
+coordinates. Use `--export-sample` to regenerate these CSVs from existing
+solution files; the sample's design and solution files are left unchanged.
 
 The script configures static coupled solves to solve magnetic first, then
 thermal. For transient solves it sets the time unit to seconds, selects the
@@ -103,3 +150,10 @@ created `design.mn` and all four coupled 2D/3D static/transient solution files.
 The transient validation issue was traced to the missing fixed-interval
 time-step method selection; setting only the start, stop, and step values was
 not sufficient.
+
+CSV export reports the fields present in the solved model; it does not create
+electrical excitation or losses. The generated coils are conductor placeholders
+and are not assigned winding currents by this script. In the exported
+`sample_0005`, heat-source density is zero and temperature remains at 20 °C.
+Without excitations or other heat sources in the template, maps can therefore
+contain zeros even when the solve and export succeed.

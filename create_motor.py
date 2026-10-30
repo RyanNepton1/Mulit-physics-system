@@ -8,8 +8,10 @@ Each run starts a visible ThermNet instance, opens the supplied coupled
 template, adds the motor geometry with alternating radial magnet polarity, and
 writes a design plus valid coupled 2D/3D static/transient solutions to the next
 motor_samples\\sample_#### folder. The completed design remains open in
-ThermNet. Existing sample folders and ThermNet application work files are not
-removed.
+ThermNet. Each solved result also gets spatial temperature and heat-source
+CSV maps. Use --export-sample to export maps from an existing sample without
+solving it again. Existing sample folders and ThermNet application work files
+are not removed.
 
 Edit MotorParameters below to change dimensions and material-library names.
 """
@@ -17,6 +19,7 @@ Edit MotorParameters below to change dimensions and material-library names.
 from __future__ import annotations
 
 import argparse
+import csv
 import ctypes
 import math
 import os
@@ -27,6 +30,8 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
+from generate_heatmap import generate_heatmaps
+
 
 RADIAL_INWARD_DIRECTION_INDEX = 2
 RADIAL_OUTWARD_DIRECTION_INDEX = 3
@@ -34,6 +39,9 @@ MATERIAL_DIRECTION_OPTION_COUNT = 7
 FIXED_INTERVAL_TIME_STEP_METHOD = 1
 STATIC_COUPLED_METHOD = "SolveMagneticFirst"
 TRANSIENT_COUPLED_METHOD = "AtEachTimeStep"
+HEAT_SOURCE_DENSITY_QUANTITIES = (
+    "Total heat source density",
+)
 
 
 @dataclass(frozen=True)
@@ -623,6 +631,203 @@ def _save_copy(app, path: Path) -> None:
         raise RuntimeError(f"ThermNet did not create the expected file: {path}")
 
 
+def _field_values(solution, is_transient: bool, solution_id, time_seconds, quantity):
+    field_id = (
+        (solution_id, time_seconds)
+        if is_transient
+        else solution_id
+    )
+    getter = solution.getTransientField if is_transient else solution.getStaticField
+    from win32com.client import CastTo
+
+    field = CastTo(getter(field_id, quantity), "IIField")
+    return tuple(field.getFieldData())
+
+
+def _csv_number(value: float) -> str:
+    return format(float(value), ".9g")
+
+
+def _field_coordinates(coordinates, value_count: int, quantity: str):
+    if not value_count:
+        raise RuntimeError(f"ThermNet returned no values for {quantity!r}")
+    if not coordinates or len(coordinates) % value_count:
+        raise RuntimeError(
+            f"ThermNet returned {len(coordinates)} coordinates for "
+            f"{value_count} values of {quantity!r}; cannot align the field map"
+        )
+
+    points_per_value = len(coordinates) // value_count
+    aligned_coordinates = []
+    for start in range(0, len(coordinates), points_per_value):
+        points = coordinates[start : start + points_per_value]
+        if any(len(point) != 3 for point in points):
+            raise RuntimeError(
+                f"ThermNet returned a non-3D coordinate for {quantity!r}"
+            )
+        aligned_coordinates.append(
+            tuple(
+                sum(float(point[axis]) for point in points) / points_per_value
+                for axis in range(3)
+            )
+        )
+    return aligned_coordinates
+
+
+def _export_solution_csvs(app, solution_name: str, output_dir: Path) -> list[Path]:
+    from win32com.client import CastTo
+
+    document = app.getDocument()
+    model = CastTo(document, "IIDocument")
+    solution = CastTo(model.getSolution(), "IThermNetSolution")
+    mesh_api = CastTo(model.getSolution(), "IISolution")
+    mesh = mesh_api.getMesh(1)
+    mesh_solution_id = mesh.getSolutionId()
+    is_transient = solution_name.startswith("transient")
+    if is_transient:
+        solution_id = mesh_solution_id[0] if isinstance(mesh_solution_id, tuple) else mesh_solution_id
+        time_result = solution.getFieldSolutionTimeInstants(solution_id)
+        if not isinstance(time_result, tuple) or len(time_result) != 2:
+            raise RuntimeError("ThermNet returned an unexpected transient time array")
+        time_values = tuple(float(value) for value in time_result[1])
+        if not time_values or int(time_result[0]) != len(time_values):
+            raise RuntimeError(
+                "ThermNet returned an empty or inconsistent transient time array"
+            )
+    else:
+        solution_id = mesh_solution_id
+        time_values = (None,)
+
+    temperature_unit = model.getDefaultTemperatureUnit().lower()
+    temperature_unit = temperature_unit.replace("degrees ", "").replace(" ", "_")
+    temperature_path = output_dir / f"coupled_{solution_name}_temperature.csv"
+    heat_source_path = (
+        output_dir / f"coupled_{solution_name}_heat_source_density.csv"
+    )
+    exported_paths = [temperature_path, heat_source_path]
+
+    with (
+        temperature_path.open("w", newline="", encoding="utf-8-sig") as temperature_file,
+        heat_source_path.open("w", newline="", encoding="utf-8-sig") as heat_source_file,
+    ):
+        temperature_writer = csv.writer(temperature_file)
+        heat_source_writer = csv.writer(heat_source_file)
+        temperature_writer.writerow(
+            ("time_s", "x_m", "y_m", "z_m", f"temperature_{temperature_unit}")
+        )
+        heat_source_writer.writerow(
+            (
+                "time_s",
+                "quantity",
+                "x_m",
+                "y_m",
+                "z_m",
+                "heat_source_density_W_per_m3",
+            )
+        )
+
+        for time_seconds in time_values:
+            coordinates = _field_values(
+                solution,
+                is_transient,
+                solution_id,
+                time_seconds,
+                "Coordinates",
+            )
+            temperature_values = _field_values(
+                solution,
+                is_transient,
+                solution_id,
+                time_seconds,
+                "Temperature",
+            )
+            temperature_coordinates = _field_coordinates(
+                coordinates, len(temperature_values), "Temperature"
+            )
+            time_cell = "" if time_seconds is None else _csv_number(time_seconds)
+            temperature_writer.writerows(
+                (
+                    time_cell,
+                    *(_csv_number(axis) for axis in point),
+                    _csv_number(value),
+                )
+                for point, value in zip(
+                    temperature_coordinates, temperature_values
+                )
+            )
+
+            for quantity in HEAT_SOURCE_DENSITY_QUANTITIES:
+                values = _field_values(
+                    solution,
+                    is_transient,
+                    solution_id,
+                    time_seconds,
+                    quantity,
+                )
+                field_coordinates = _field_coordinates(
+                    coordinates, len(values), quantity
+                )
+                heat_source_writer.writerows(
+                    (
+                        time_cell,
+                        quantity,
+                        *(_csv_number(axis) for axis in point),
+                        _csv_number(value),
+                    )
+                    for point, value in zip(field_coordinates, values)
+                )
+
+    for path in exported_paths:
+        if not path.is_file() or path.stat().st_size == 0:
+            raise RuntimeError(f"ThermNet result CSV was not created: {path}")
+    return exported_paths
+
+
+def _generate_sample_heatmaps(sample_dir: Path) -> list[Path]:
+    return generate_heatmaps(sample_dir)
+
+
+def _export_sample_csvs(sample_dir: Path) -> list[Path]:
+    solution_names = (
+        "static_2d",
+        "transient_2d",
+        "static_3d",
+        "transient_3d",
+    )
+    solution_files = [
+        (name, sample_dir / f"coupled_{name}.mn")
+        for name in solution_names
+        if (sample_dir / f"coupled_{name}.mn").is_file()
+    ]
+    if not solution_files:
+        raise FileNotFoundError(
+            f"No coupled solution files found in sample folder: {sample_dir}"
+        )
+    design_path = sample_dir / "design.mn"
+    if not design_path.is_file():
+        raise FileNotFoundError(f"Sample design not found: {design_path}")
+
+    pythoncom, app, document_api, _thermnet_pid = _connect_to_thermnet()
+    exported_paths = []
+    try:
+        _prepare_thermnet(app)
+        for solution_name, solution_path in solution_files:
+            _open_document(app, document_api, solution_path)
+            try:
+                exported_paths.extend(
+                    _export_solution_csvs(app, solution_name, sample_dir)
+                )
+            finally:
+                _close_active_document(app)
+    finally:
+        try:
+            app.close(False)
+        finally:
+            pythoncom.CoUninitialize()
+    _generate_sample_heatmaps(sample_dir)
+    return exported_paths
+
+
 def _run_solution(
     app, solution_name: str, duration_seconds: float, step_seconds: float
 ) -> bool:
@@ -677,8 +882,14 @@ def main() -> None:
     parser.add_argument(
         "--template",
         type=Path,
-        required=True,
+        default=None,
         help="Path to a clean coupled MAGNET Thermal .mn or .tn template",
+    )
+    parser.add_argument(
+        "--export-sample",
+        type=Path,
+        default=None,
+        help="Export spatial CSV maps from an existing numbered sample folder",
     )
     parser.add_argument(
         "--output-root",
@@ -706,6 +917,18 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    if args.export_sample is not None:
+        if args.template is not None:
+            parser.error("--export-sample cannot be combined with --template")
+        sample_dir = args.export_sample.resolve()
+        if not sample_dir.is_dir():
+            raise FileNotFoundError(f"Sample folder not found: {sample_dir}")
+        exported_paths = _export_sample_csvs(sample_dir)
+        print(f"Exported {len(exported_paths)} CSV maps to: {sample_dir}")
+        return
+
+    if args.template is None:
+        parser.error("--template is required unless --export-sample is used")
     template = args.template.resolve()
     if not template.is_file():
         raise FileNotFoundError(f"Coupled model template not found: {template}")
@@ -757,8 +980,11 @@ def main() -> None:
                 if solved:
                     coupled_name = f"coupled_{solution_name}"
                     _save_copy(app, stage_dir / f"{coupled_name}.mn")
+                    _export_solution_csvs(app, solution_name, stage_dir)
                     saved_solutions.append(coupled_name)
                 _close_active_document(app)
+
+            _generate_sample_heatmaps(stage_dir)
 
             # Close every staged file before renaming its directory. Opening
             # the final design beforehand leaves a Windows file lock in staging.
