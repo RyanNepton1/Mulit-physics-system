@@ -1,0 +1,2509 @@
+{
+  "status": "completed",
+  "created_at_utc": "2026-11-05T19:25:58.530579+00:00",
+  "project": "C:\\Users\\rnepto\\Documents\\testMotor.moto",
+  "motorsolve_version": "2212.0.0.0",
+  "design_name": "Prototype Design 1",
+  "design_parameters": [
+    {
+      "name": "Supply voltage",
+      "quantity": "ElectricPotential",
+      "unit": "Volt",
+      "value": 15.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Rated current",
+      "quantity": "Current",
+      "unit": "Ampere",
+      "value": 7.85,
+      "part": "General Settings"
+    },
+    {
+      "name": "Rated speed",
+      "quantity": "AngularSpeed",
+      "unit": "RPM",
+      "value": 1000.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Outer diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 74.9,
+      "part": "General Settings"
+    },
+    {
+      "name": "Air gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.5,
+      "part": "General Settings"
+    },
+    {
+      "name": "Stack height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 74.9,
+      "part": "General Settings"
+    },
+    {
+      "name": "Description",
+      "quantity": "",
+      "unit": "",
+      "value": "",
+      "part": "General Settings"
+    },
+    {
+      "name": "Rotor location",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Interior",
+        "id": "Interior"
+      },
+      "part": "General Settings"
+    },
+    {
+      "name": "Rotor type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Surface mounted with parallel magnets",
+        "id": "Surface mounted with parallel magnets"
+      },
+      "part": "General Settings"
+    },
+    {
+      "name": "Number of poles",
+      "quantity": "",
+      "unit": "",
+      "value": 4.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Stator type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Square",
+        "id": "Square"
+      },
+      "part": "General Settings"
+    },
+    {
+      "name": "Number of phases",
+      "quantity": "",
+      "unit": "",
+      "value": 3.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Number of slots",
+      "quantity": "",
+      "unit": "",
+      "value": 12.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Friction loss",
+      "quantity": "Loss",
+      "unit": "KiloWatt",
+      "value": 0.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Windage loss",
+      "quantity": "Loss",
+      "unit": "KiloWatt",
+      "value": 0.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Stray loss factor",
+      "quantity": "",
+      "unit": "",
+      "value": 0.0,
+      "part": "General Settings"
+    },
+    {
+      "name": "Skew type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Linear skew",
+        "id": "Linear skew"
+      },
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Skew",
+      "quantity": "",
+      "unit": "",
+      "value": 0.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Skew angle",
+      "quantity": "Angle",
+      "unit": "Degree",
+      "value": 0.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Number of magnets per pole",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Rotor overhang",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Override with radial magnetization",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "False",
+        "id": "False"
+      },
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Inner diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 29.18,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Outer diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 41.2,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Sleeve thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Pole face offset",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Magnet angle",
+      "quantity": "Angle",
+      "unit": "Degree",
+      "value": 60.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Magnet thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 2.5,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Magnet tip radius",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Rotor (Surface mounted with parallel magnets)"
+    },
+    {
+      "name": "Skew",
+      "quantity": "",
+      "unit": "",
+      "value": 0.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Skew angle",
+      "quantity": "Angle",
+      "unit": "Degree",
+      "value": 0.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Inner diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 42.2,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Outer diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 74.9,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Bifurcation radius",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Slot depth",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 12.86,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Slot opening width",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 2.4,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Tooth tang angle",
+      "quantity": "Angle",
+      "unit": "Degree",
+      "value": 10.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Tooth tip depth",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Tooth tip thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.88,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Tooth width",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 3.51,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Bottom fillet radius",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.83222222,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Tooth tang radius",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Top fillet radius",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.83222222,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator (Square)"
+    },
+    {
+      "name": "Connection type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Wye (Star)",
+        "id": "Wye (Star)"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Drive type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Sinewave current",
+        "id": "Sinewave current"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of parallel paths",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "1",
+        "id": "1"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Diode voltage drop",
+      "quantity": "ElectricPotential",
+      "unit": "Volt",
+      "value": 0.6,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Switch voltage drop",
+      "quantity": "ElectricPotential",
+      "unit": "Volt",
+      "value": 0.2,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Current hysteresis",
+      "quantity": "",
+      "unit": "",
+      "value": 15.0,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Sampling frequency",
+      "quantity": "Frequency",
+      "unit": "Hertz",
+      "value": null,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Coil placement method",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Over-under",
+        "id": "Over-under"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Slot liner thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.166444444444444,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Coil separator thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.166444444444444,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Slot wedge thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.332888888888889,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Wire size method",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Coil fill factor",
+        "id": "Coil fill factor"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Coil fill factor",
+      "quantity": "",
+      "unit": "",
+      "value": 40.0,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of strands in hand",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Wire insulation thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Layout method",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Automatic",
+        "id": "Automatic"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Winding type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Lap",
+        "id": "Lap"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of coils per set",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "1",
+        "id": "1"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Coil span",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "3",
+        "id": "3"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of layers",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "2",
+        "id": "2"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Phase offsets",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "2",
+        "id": "2"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Automatic layout",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "100% (1 -4 7 -10)",
+        "id": "1 -4 7 -10"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of turns",
+      "quantity": "",
+      "unit": "",
+      "value": 16.0,
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Phase B offset",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "2",
+        "id": "2"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Phase C offset",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "2",
+        "id": "2"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of phase A coils",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "4",
+        "id": "4"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of phase B coils",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "4",
+        "id": "4"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Number of phase C coils",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "4",
+        "id": "4"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Layout of phase A",
+      "quantity": "",
+      "unit": "",
+      "value": [
+        [
+          "1",
+          "4",
+          "16"
+        ],
+        [
+          "7",
+          "4",
+          "16"
+        ],
+        [
+          "7",
+          "10",
+          "16"
+        ],
+        [
+          "1",
+          "10",
+          "16"
+        ]
+      ],
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Layout of phase B",
+      "quantity": "",
+      "unit": "",
+      "value": [
+        [
+          "3",
+          "6",
+          "16"
+        ],
+        [
+          "9",
+          "6",
+          "16"
+        ],
+        [
+          "9",
+          "12",
+          "16"
+        ],
+        [
+          "3",
+          "12",
+          "16"
+        ]
+      ],
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Layout of phase C",
+      "quantity": "",
+      "unit": "",
+      "value": [
+        [
+          "5",
+          "8",
+          "16"
+        ],
+        [
+          "11",
+          "8",
+          "16"
+        ],
+        [
+          "11",
+          "2",
+          "16"
+        ],
+        [
+          "5",
+          "2",
+          "16"
+        ]
+      ],
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Phases to display",
+      "quantity": "",
+      "unit": "",
+      "value": [
+        {
+          "name": "A",
+          "id": "A"
+        },
+        {
+          "name": "B",
+          "id": "B"
+        },
+        {
+          "name": "C",
+          "id": "C"
+        }
+      ],
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Animation",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Off",
+        "id": "Off"
+      },
+      "part": "Stator Windings"
+    },
+    {
+      "name": "Chart to display",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Line-line Back-EMF",
+        "id": "Line-line Back-EMF"
+      },
+      "part": "Stator Windings Charts"
+    },
+    {
+      "name": "Effective pole angle",
+      "quantity": "Angle",
+      "unit": "Degree",
+      "value": 120.0,
+      "part": "Stator Windings Charts"
+    },
+    {
+      "name": "Phases to chart",
+      "quantity": "",
+      "unit": "",
+      "value": [
+        {
+          "name": "A",
+          "id": "A"
+        },
+        {
+          "name": "B",
+          "id": "B"
+        },
+        {
+          "name": "C",
+          "id": "C"
+        }
+      ],
+      "part": "Stator Windings Charts"
+    },
+    {
+      "name": "End winding type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Idealized",
+        "id": "Idealized"
+      },
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "End winding stack gap",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.832222222222222,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "End winding neighbor gap",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": null,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Inner inset depth",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "End winding visible coils",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "type": 0,
+        "values": [
+          0.0
+        ]
+      },
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Outer diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 69.2143214530278,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 23.7323696788954,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Fill factor",
+      "quantity": "",
+      "unit": "",
+      "value": 40.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Turn length",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 281.801568166304,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Resistance",
+      "quantity": "ElectricResistance",
+      "unit": "Ohm",
+      "value": 0.09698506285622342,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Inductance",
+      "quantity": "Inductance",
+      "unit": "MilliHenry",
+      "value": 0.06373119819455851,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Stator end winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Shaft transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Hub transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Housing transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Stator End Windings"
+    },
+    {
+      "name": "Rotor core material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "M-19 29 Ga",
+        "id": "M-19 29 Ga"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor magnet material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Ceramic 10",
+        "id": "Ceramic 10"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Sleeve material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "304 Stainless steel",
+        "id": "304 Stainless steel"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor stacking factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor magnetization adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Magnet strength adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor eddy current loss adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor iron loss adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Stator back iron material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "M-19 29 Ga",
+        "id": "M-19 29 Ga"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Stator tooth material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "M-19 29 Ga",
+        "id": "M-19 29 Ga"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Stator coil material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Copper: 100% IACS",
+        "id": "Copper: 100% IACS"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Stator slot liner material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Epoxy resin",
+        "id": "Epoxy resin"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Stator stacking factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Stator magnetization adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Stator iron loss adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Shaft material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Hub material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Non-magnetic",
+        "id": "Non-magnetic"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Include shaft & hub in magnetic analysis",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "No",
+        "id": "No"
+      },
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Stator end winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Shaft transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Hub transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Housing transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Materials"
+    },
+    {
+      "name": "Ambient temperature",
+      "quantity": "Temperature",
+      "unit": "DegreeCelsius",
+      "value": 20.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Steady-state temperature mode",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Automatically calculated",
+        "id": "Automatically calculated"
+      },
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Stator end winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Shaft transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Hub transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Housing transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Settings"
+    },
+    {
+      "name": "Housing thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 3.32888888888889,
+      "part": "Housing"
+    },
+    {
+      "name": "Left endregion height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 4.16111111111111,
+      "part": "Housing"
+    },
+    {
+      "name": "Right endregion height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 4.16111111111111,
+      "part": "Housing"
+    },
+    {
+      "name": "Left end plate height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 4.16111111111111,
+      "part": "Housing"
+    },
+    {
+      "name": "Right end plate height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 4.16111111111111,
+      "part": "Housing"
+    },
+    {
+      "name": "Left flange height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Left flange diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 99.8666666666667,
+      "part": "Housing"
+    },
+    {
+      "name": "Right flange height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 4.16111111111111,
+      "part": "Housing"
+    },
+    {
+      "name": "Right flange diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 99.8666666666667,
+      "part": "Housing"
+    },
+    {
+      "name": "Shaft diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 10.5692222222222,
+      "part": "Housing"
+    },
+    {
+      "name": "Left shaft extension height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Right shaft extension height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 16.6444444444444,
+      "part": "Housing"
+    },
+    {
+      "name": "Left bearing thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 6.65777777777778,
+      "part": "Housing"
+    },
+    {
+      "name": "Right bearing thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 6.65777777777778,
+      "part": "Housing"
+    },
+    {
+      "name": "Left bearing height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 6.65777777777778,
+      "part": "Housing"
+    },
+    {
+      "name": "Right bearing height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 6.65777777777778,
+      "part": "Housing"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Stator end winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Shaft transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Hub transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Housing transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Housing"
+    },
+    {
+      "name": "Core - magnet gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Core - hub gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0307922222222222,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Rotor - sleeve gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Core - housing gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0307922222222222,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Housing - left end plate gap height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Housing - right end plate gap height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Left flange - left end plate gap height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Right flange - right end plate gap height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Left bearing effective gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.832222222222222,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Right bearing effective gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.832222222222222,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Stator end winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Shaft transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Hub transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Housing transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Interface Gaps"
+    },
+    {
+      "name": "Motor orientation",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Horizontal",
+        "id": "Horizontal"
+      },
+      "part": "Cooling"
+    },
+    {
+      "name": "Cooling method",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Totally Enclosed Non-Ventilated (TENV)",
+        "id": "Totally Enclosed Non-Ventilated (TENV)"
+      },
+      "part": "Cooling"
+    },
+    {
+      "name": "Coolant temperature",
+      "quantity": "Temperature",
+      "unit": "DegreeCelsius",
+      "value": null,
+      "part": "Cooling"
+    },
+    {
+      "name": "Left face temperature",
+      "quantity": "Temperature",
+      "unit": "DegreeCelsius",
+      "value": null,
+      "part": "Cooling"
+    },
+    {
+      "name": "Right face temperature",
+      "quantity": "Temperature",
+      "unit": "DegreeCelsius",
+      "value": null,
+      "part": "Cooling"
+    },
+    {
+      "name": "Spray cooling type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "None",
+        "id": "None"
+      },
+      "part": "Cooling"
+    },
+    {
+      "name": "Duct type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "None",
+        "id": "None"
+      },
+      "part": "Cooling"
+    },
+    {
+      "name": "Housing emissivity",
+      "quantity": "",
+      "unit": "",
+      "value": 0.85,
+      "part": "Cooling"
+    },
+    {
+      "name": "Left face emissivity",
+      "quantity": "",
+      "unit": "",
+      "value": 0.85,
+      "part": "Cooling"
+    },
+    {
+      "name": "Right face emissivity",
+      "quantity": "",
+      "unit": "",
+      "value": 0.85,
+      "part": "Cooling"
+    },
+    {
+      "name": "Left endregion emissivity",
+      "quantity": "",
+      "unit": "",
+      "value": 0.85,
+      "part": "Cooling"
+    },
+    {
+      "name": "Right endregion emissivity",
+      "quantity": "",
+      "unit": "",
+      "value": 0.85,
+      "part": "Cooling"
+    },
+    {
+      "name": "Housing convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Air gap convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Left face convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Right face convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Left endregion convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Right endregion convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Left bearing convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Right bearing convection adjustment factor",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Stator end winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Shaft transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Hub transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Housing transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Cooling"
+    },
+    {
+      "name": "Surrounding material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "AIR",
+        "id": "AIR"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Rotor filler material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Epoxy resin",
+        "id": "Epoxy resin"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Rotor core filler material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Epoxy resin",
+        "id": "Epoxy resin"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Stator core filler material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Epoxy resin",
+        "id": "Epoxy resin"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Stator coil filler material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Epoxy resin",
+        "id": "Epoxy resin"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Housing material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Left end plate material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Right end plate material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Left bearing material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Right bearing material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Left flange material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Right flange material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "CR10: Cold rolled 1010 steel",
+        "id": "CR10: Cold rolled 1010 steel"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Air gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "AIR",
+        "id": "AIR"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Core - magnet gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Core - hub gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Rotor - sleeve gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Core - housing gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Housing - left end plate gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Housing - right end plate gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Left flange - left end plate gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Right flange - right end plate gap material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Virtual Air",
+        "id": "Virtual Air"
+      },
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Rotor core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Rotor sleeve transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Rotor magnet transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Stator core transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Stator winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Stator end winding transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Shaft transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Hub transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Housing transparency",
+      "quantity": "",
+      "unit": "",
+      "value": 50.0,
+      "part": "Thermal Materials"
+    },
+    {
+      "name": "Supply voltage",
+      "quantity": "ElectricPotential",
+      "unit": "Volt",
+      "value": 15.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Rated speed",
+      "quantity": "AngularSpeed",
+      "unit": "RPM",
+      "value": 1000.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Rated torque",
+      "quantity": "Torque",
+      "unit": "Newton Metre",
+      "value": 1.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Number of phases",
+      "quantity": "",
+      "unit": "",
+      "value": 3.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Number of poles",
+      "quantity": "",
+      "unit": "",
+      "value": 4.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Number of slots",
+      "quantity": "",
+      "unit": "",
+      "value": 12.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Air gap thickness",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 0.5,
+      "part": "Sizing"
+    },
+    {
+      "name": "Temperature",
+      "quantity": "Temperature",
+      "unit": "DegreeCelsius",
+      "value": 20.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Motor aspect ratio",
+      "quantity": "",
+      "unit": "",
+      "value": 1.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Maximum outer diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": null,
+      "part": "Sizing"
+    },
+    {
+      "name": "Maximum height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": null,
+      "part": "Sizing"
+    },
+    {
+      "name": "Rotor location",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Interior",
+        "id": "Interior"
+      },
+      "part": "Sizing"
+    },
+    {
+      "name": "Rotor type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Surface mounted with parallel magnets",
+        "id": "Surface mounted with parallel magnets"
+      },
+      "part": "Sizing"
+    },
+    {
+      "name": "Rotor magnet material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Ceramic 10",
+        "id": "Ceramic 10"
+      },
+      "part": "Sizing"
+    },
+    {
+      "name": "Stator type",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Square",
+        "id": "Square"
+      },
+      "part": "Sizing"
+    },
+    {
+      "name": "Stator coil material",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Copper: 100% IACS",
+        "id": "Copper: 100% IACS"
+      },
+      "part": "Sizing"
+    },
+    {
+      "name": "Sizing method",
+      "quantity": "",
+      "unit": "",
+      "value": {
+        "name": "Torque per unit rotor volume (TRV)",
+        "id": "Torque per unit rotor volume (TRV)"
+      },
+      "part": "Sizing"
+    },
+    {
+      "name": "Torque per unit rotor volume (TRV)",
+      "quantity": "TorquePerUnitRotorVolume",
+      "unit": "KiloNewton Metre Metre^-3",
+      "value": 10.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Coil fill factor",
+      "quantity": "",
+      "unit": "",
+      "value": 40.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Rotor-stator ratio",
+      "quantity": "",
+      "unit": "",
+      "value": 0.55,
+      "part": "Sizing"
+    },
+    {
+      "name": "Stator flux density",
+      "quantity": "MagneticFluxDensity",
+      "unit": "Tesla",
+      "value": 1.2,
+      "part": "Sizing"
+    },
+    {
+      "name": "Back-EMF limit",
+      "quantity": "",
+      "unit": "",
+      "value": 0.9,
+      "part": "Sizing"
+    },
+    {
+      "name": "Magnet air gap ratio",
+      "quantity": "",
+      "unit": "",
+      "value": 5.0,
+      "part": "Sizing"
+    },
+    {
+      "name": "Magnet coverage",
+      "quantity": "",
+      "unit": "",
+      "value": 0.6667,
+      "part": "Sizing"
+    },
+    {
+      "name": "Rated current",
+      "quantity": "Current",
+      "unit": "Ampere",
+      "value": 7.85,
+      "part": "Sizing"
+    },
+    {
+      "name": "Outer diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 74.9,
+      "part": "Sizing"
+    },
+    {
+      "name": "Stack height",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 74.9,
+      "part": "Sizing"
+    },
+    {
+      "name": "Airgap diameter",
+      "quantity": "Length",
+      "unit": "MilliMetre",
+      "value": 41.2,
+      "part": "Sizing"
+    },
+    {
+      "name": "Stator diameter ratio",
+      "quantity": "",
+      "unit": "",
+      "value": 0.55,
+      "part": "Sizing"
+    },
+    {
+      "name": "Rated current density",
+      "quantity": "CurrentDensity",
+      "unit": "Ampere MilliMetre^-2",
+      "value": 4.62,
+      "part": "Sizing"
+    },
+    {
+      "name": "Back-EMF ratio",
+      "quantity": "",
+      "unit": "",
+      "value": 0.85,
+      "part": "Sizing"
+    },
+    {
+      "name": "Power factor",
+      "quantity": "",
+      "unit": "",
+      "value": 85.3,
+      "part": "Sizing"
+    }
+  ],
+  "analysis_parameters": {
+    "torque_speed": [
+      {
+        "name": "Designs",
+        "quantity": "",
+        "unit": "",
+        "value": [
+          {
+            "name": "Prototype Design 1",
+            "id": "Prototype Design 1"
+          }
+        ]
+      },
+      {
+        "name": "Thermal state",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "Ambient temperature",
+          "id": "Ambient temperature"
+        }
+      },
+      {
+        "name": "Exchange X and Y axes",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "No",
+          "id": "No"
+        }
+      },
+      {
+        "name": "Current input method",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "% of rated current",
+          "id": "% of rated current"
+        }
+      },
+      {
+        "name": "Set point line current percentage",
+        "quantity": "",
+        "unit": "",
+        "value": 100.0
+      },
+      {
+        "name": "Advance angle(s)",
+        "quantity": "Angle",
+        "unit": "Degree",
+        "value": {
+          "type": 0,
+          "values": [
+            0.0
+          ]
+        }
+      },
+      {
+        "name": "Speed input method",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "% of rated speed",
+          "id": "% of rated speed"
+        }
+      },
+      {
+        "name": "Rotor speed percentage(s)",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "type": 1,
+          "values": [
+            10.0,
+            150.0,
+            20.0
+          ]
+        }
+      },
+      {
+        "name": "Model type",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "Linearized",
+          "id": "Linearized"
+        }
+      },
+      {
+        "name": "Number of back-EMF harmonics",
+        "quantity": "",
+        "unit": "",
+        "value": 45.0
+      },
+      {
+        "name": "Number of inductance harmonics",
+        "quantity": "",
+        "unit": "",
+        "value": 10.0
+      },
+      {
+        "name": "FEA current input method",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "% of rated current",
+          "id": "% of rated current"
+        }
+      },
+      {
+        "name": "FEA current percentage",
+        "quantity": "",
+        "unit": "",
+        "value": null
+      },
+      {
+        "name": "Maximum sampling interval",
+        "quantity": "Angle",
+        "unit": "Degree",
+        "value": 0.5
+      },
+      {
+        "name": "Convergence tolerance",
+        "quantity": "",
+        "unit": "",
+        "value": 0.015
+      },
+      {
+        "name": "Number of periods",
+        "quantity": "",
+        "unit": "",
+        "value": 1.0
+      },
+      {
+        "name": "Startup transient",
+        "quantity": "",
+        "unit": "",
+        "value": null
+      },
+      {
+        "name": "Maximum number of sample points",
+        "quantity": "",
+        "unit": "",
+        "value": 20000.0
+      },
+      {
+        "name": "Include iron loss",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "Yes",
+          "id": "Yes"
+        }
+      },
+      {
+        "name": "Speed/Accuracy tradeoff",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "1 (fastest)",
+          "id": "1 (fastest)"
+        }
+      }
+    ],
+    "thermal_losses": [
+      {
+        "name": "Designs",
+        "quantity": "",
+        "unit": "",
+        "value": [
+          {
+            "name": "Prototype Design 1",
+            "id": "Prototype Design 1"
+          }
+        ]
+      },
+      {
+        "name": "Thermal state",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "Ambient temperature",
+          "id": "Ambient temperature"
+        }
+      },
+      {
+        "name": "Always show 0 on Y axis",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "Yes",
+          "id": "Yes"
+        }
+      },
+      {
+        "name": "Advance angle",
+        "quantity": "Angle",
+        "unit": "Degree",
+        "value": 0.0
+      },
+      {
+        "name": "Number of sample points",
+        "quantity": "",
+        "unit": "",
+        "value": 24.0
+      },
+      {
+        "name": "Periodicity",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "Best Possible",
+          "id": "Best Possible"
+        }
+      },
+      {
+        "name": "Startup transient",
+        "quantity": "",
+        "unit": "",
+        "value": 10.0
+      },
+      {
+        "name": "Include demagnetization",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "Default",
+          "id": "Default"
+        }
+      },
+      {
+        "name": "Speed/Accuracy tradeoff",
+        "quantity": "",
+        "unit": "",
+        "value": {
+          "name": "1 (fastest)",
+          "id": "1 (fastest)"
+        }
+      }
+    ]
+  },
+  "sample_dir": "C:\\Users\\rnepto\\Desktop\\CoupledCB\\Multi-physics-system\\motorsolve_samples\\sample_0002",
+  "torque_speed": {
+    "result": "Torque vs. speed",
+    "designs": [
+      "Prototype Design 1"
+    ],
+    "headers": [
+      "('Rotor speed (rpm)', 'Rotor speed (% of rated)', 'Torque (N·m)')"
+    ],
+    "data_rows": 8,
+    "elapsed_seconds": 0.782050899999831,
+    "csv": "torque_speed.csv"
+  },
+  "thermal_losses": {
+    "result": "Losses for thermal analysis",
+    "designs": [
+      "Prototype Design 1"
+    ],
+    "headers": [
+      "('', 'Loss - Total (kW)', 'Loss - Winding (kW)', 'Loss - Iron (kW)', 'Loss - Stator back iron (kW)', 'Loss - Stator teeth (kW)', 'Loss - Rotor back iron (kW)')"
+    ],
+    "data_rows": 1,
+    "elapsed_seconds": 0.22047350000002552,
+    "csv": "thermal_losses.csv"
+  }
+}

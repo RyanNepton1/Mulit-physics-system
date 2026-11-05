@@ -143,6 +143,74 @@ sample's `design.mn` is left open so the geometry can be inspected. Existing
 numbered samples and ThermNet application work files are preserved. If a run
 fails, cleanup is limited to that run's incomplete sample folder.
 
+## MotorSolve BLDC baseline
+
+`run_startup_prototype.py` uses the MotorSolve 2212 COM API to run the supplied
+parameterized `.moto` design and export its built-in torque-speed and thermal
+loss charts plus instantaneous air-gap flux density sampled with MotorSolve's
+field arc probe. The supplied
+`testMotor.moto` baseline contains a 12-slot,
+4-pole, 3-phase design named `Prototype Design 1`; its rated current is
+7.85 A, rated speed is 1000 rpm, and supply voltage is 15 V. These are the
+starter model's settings, not independently validated motor ratings.
+
+Open the design in **Simcenter MotorSolve 2212** before running the script:
+
+```powershell
+python .\run_startup_prototype.py `
+  --project "C:\Users\rnepto\Documents\testMotor.moto"
+```
+
+The script attaches to the running MotorSolve instance and checks that the
+active project and software version match the requested inputs. It does not
+launch another MotorSolve version, alter the motor design, or save the source
+model; field-result settings are updated in memory for the export. It creates a
+new numbered folder under `.\motorsolve_samples` containing:
+
+```text
+sample_0001\
+  torque_speed.csv
+  thermal_losses.csv
+  instantaneous_flux_density.csv
+  parameters.json
+  metadata.json
+```
+
+`instantaneous_flux_density.csv` contains the field arc's angle, XY location,
+axial position, flux density in tesla, and a `sampled` flag. The default probe
+is a full circle of radius 20.9 mm centered on the motor axis, using 721
+samples (0.5° spacing). MotorSolve may omit positions where field values are
+unavailable; those angles remain in the CSV with a blank value and
+`sampled=false`. The arc radius, center, angle range, sample count, current
+percentage, advance angle, rotor position, and field-result configuration are
+recorded alongside the motor and chart parameters in `parameters.json`;
+`metadata.json` also records sample counts and angular spacing. Field arc
+probe settings are changed in MotorSolve memory for the export; the source
+model is not saved. The thermal-loss chart is MotorSolve's
+“Losses for thermal analysis” result at the
+model's rated operating point; it requires a Thermal Results license and is
+not a spatial temperature map or a transient thermal simulation.
+
+Optional arguments:
+
+| Argument | Default | Description |
+|---|---:|---|
+| `--project` | Required | `.moto` project already open in MotorSolve 2212 |
+| `--output-root` | `.\motorsolve_samples` | Folder for numbered data samples |
+| `--design-name` | The only design in the project | Explicit design to run |
+| `--field-arc-radius-mm` | `20.9` | Circular air-gap probe radius in millimeters |
+| `--field-arc-samples` | `721` | Number of samples along the arc (2–3601) |
+| `--field-arc-center-z-mm` | `0` | Axial coordinate of the arc center |
+| `--field-arc-start-angle-deg` | `0` | Start angle of the arc |
+| `--field-arc-end-angle-deg` | `360` | End angle of the arc |
+| `--field-current-percent` | `100` | Peak line current as a percent of rated current |
+| `--field-advance-angle-deg` | `0` | Current advance angle for the field snapshot |
+| `--field-rotor-position-deg` | `0` | Rotor position for the field snapshot |
+
+This is the baseline data-export step; parameter sweeps are not included yet.
+A loss-chart/license failure leaves the completed torque-speed CSV and a
+failed `metadata.json` in the sample folder for diagnosis.
+
 ## Validation note
 
 The workflow was exercised against the session's coupled template. That run
